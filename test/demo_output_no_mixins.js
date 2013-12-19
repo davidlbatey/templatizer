@@ -23,6 +23,54 @@ exports["404withVars"] = function tmpl_404withVars(locals) {
     return buf.join('');
 };
 
+// mixinsWithBlock.jade compiled template
+exports["mixinsWithBlock"] = function tmpl_mixinsWithBlock(locals) {
+    var buf = [];
+    var MyModal_mixin = function (title) {
+        var block = this.block, attributes = this.attributes || {}, escaped = this.escaped || {};
+        buf.push('<h1>' + jade.escape(null == (jade.interp = title) ? '' : jade.interp) + '</h1><div class="body">');
+        block && block();
+        buf.push('</div>');
+    };
+    MyModal_mixin.call({
+        block: function () {
+            buf.push('<p>some body text</p>');
+        }
+    }, 'foo');
+    return buf.join('');
+};
+
+// mixinsWithBlock.jade:MyModal_mixin compiled template
+exports["mixinsWithBlock"]["MyModal"] = function tmpl_mixinsWithBlock_MyModal_mixin(title) {
+    var block = this.block, attributes = this.attributes || {}, escaped = this.escaped || {}, buf = [];
+    buf.push("<h1>" + jade.escape(null == (jade.interp = title) ? "" : jade.interp) + '</h1><div class="body">');
+    block && block();
+    buf.push("</div>");
+    return buf.join("");
+};
+
+// mixinsWithoutBlock.jade compiled template
+exports["mixinsWithoutBlock"] = function tmpl_mixinsWithoutBlock(locals) {
+    var buf = [];
+    var MyModal_mixin = function (title) {
+        var block = this.block, attributes = this.attributes || {}, escaped = this.escaped || {};
+        buf.push('<h1>' + jade.escape(null == (jade.interp = title) ? '' : jade.interp) + '</h1><div class="body">');
+        block && block();
+        buf.push('</div>');
+    };
+    MyModal_mixin('foo');
+    return buf.join('');
+};
+
+// mixinsWithoutBlock.jade:MyModal_mixin compiled template
+exports["mixinsWithoutBlock"]["MyModal"] = function tmpl_mixinsWithoutBlock_MyModal_mixin(title) {
+    var block = this.block, attributes = this.attributes || {}, escaped = this.escaped || {}, buf = [];
+    buf.push("<h1>" + jade.escape(null == (jade.interp = title) ? "" : jade.interp) + '</h1><div class="body">');
+    block && block();
+    buf.push("</div>");
+    return buf.join("");
+};
+
 // otherfolder/deep2/deeptweet.jade compiled template
 exports["otherfolder"]["deep2"]["deeptweet"] = function tmpl_otherfolder_deep2_deeptweet(locals) {
     var buf = [];
