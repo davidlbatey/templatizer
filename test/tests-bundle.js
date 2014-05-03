@@ -480,8 +480,6 @@ exports["userscomplex"] = function tmpl_userscomplex(locals) {
 // attach to window or export with commonJS
 if (typeof module !== "undefined" && typeof module.exports !== "undefined") {
     module.exports = exports;
-} else if (typeof define === "function" && define.amd) {
-    define(exports);
 } else {
     root.templatizer = exports;
 }

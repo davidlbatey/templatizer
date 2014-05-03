@@ -109,7 +109,7 @@ module.exports = function (templateDirectories, outputFile, options) {
             parentObjName: parentObjName
         });
 
-        
+
         if (!options.dontTransformMixins) {
             mixinOutput = astResult.mixins;
             template = astResult.template;
@@ -130,8 +130,6 @@ module.exports = function (templateDirectories, outputFile, options) {
         '// attach to window or export with commonJS',
         'if (typeof module !== "undefined" && typeof module.exports !== "undefined") {',
         '    module.exports = ' + parentObjName + ';',
-        '} else if (typeof define === "function" && define.amd) {',
-        '    define(' + parentObjName + ');',
         '} else {',
         '    root.templatizer = ' + parentObjName + ';',
         '}',
