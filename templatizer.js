@@ -34,6 +34,7 @@ module.exports = function (templateDirectories, outputFile, options) {
     var output = [
         '//jade runtime',
         '(function () {',
+        'var define = undefined;',
         'var exports; //work in browserify',
         jadeRuntime,
         '})();',
